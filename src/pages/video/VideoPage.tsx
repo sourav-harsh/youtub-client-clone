@@ -14,7 +14,7 @@ export default function VideoPage() {
         if(!accessToken){
             return;
         }
-        fetch("${import.meta.env.VITE_BASE_URL}/api/v1/videos", {
+        fetch(`${import.meta.env.VITE_BASE_URL}/api/v1/videos`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
