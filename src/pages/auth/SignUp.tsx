@@ -2,7 +2,7 @@ export default function SignUp() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    fetch("${import.meta.env.VITE_BASE_URL}/api/v1/users/register", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/api/v1/users/register`, {
         method: "POST",
         body: formData,
     })

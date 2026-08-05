@@ -8,7 +8,7 @@ export default function DashboardPage() {
   const logout = () => {
     const accessToken = localStorage.getItem("youtube-user:accessToken");
     if (!accessToken) return;
-    fetch("${import.meta.env.VITE_BASE_URL}/api/v1/users/logout", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/api/v1/users/logout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
