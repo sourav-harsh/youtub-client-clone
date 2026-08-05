@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { UserContext } from "../../kernel/context/user.tsx";
+import {useNavigate} from "react-router-dom";
 
 export default function DashboardPage() {
   // @ts-ignore
   const { user, setUser } = useContext(UserContext);
+    const navigate = useNavigate()
 
   const logout = () => {
     const accessToken = localStorage.getItem("youtube-user:accessToken");
@@ -20,7 +22,8 @@ export default function DashboardPage() {
         localStorage.removeItem("youtube-user:user");
         localStorage.removeItem("youtube-user:accessToken");
         setUser(null);
-        window.location.href = "/login";
+        navigate("/login", { replace: true });
+        // window.location.href = "/login";
       })
       .catch((err) => {
         console.log(err);
