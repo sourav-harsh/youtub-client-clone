@@ -1,4 +1,8 @@
+import {useNavigate} from "react-router-dom";
+
 export default function SignUp() {
+    const navigate = useNavigate();
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -9,8 +13,9 @@ export default function SignUp() {
         .then((res) => res.json())
         .then((data) => {
             if (data) {
-                alert("User Registered Successfully");
-                window.location.href = "/login";
+                // alert("User Registered Successfully");
+                navigate("/login",{replace:true});
+                // window.location.href = "/login";
             }
         })
         .catch((err) => {

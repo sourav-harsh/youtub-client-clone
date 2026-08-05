@@ -22,7 +22,7 @@ export default function Login() {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       if (data) {
        localStorage.setItem("youtube-user:accessToken", data.data.accessToken);
        localStorage.setItem("youtube-user:user", JSON.stringify(data.data.user));
